@@ -204,16 +204,15 @@ public class WebClient implements Serializable, AutoCloseable {
     }
 
     
-    private Screen defaultScreen = null;
+    private Screen defaultScreen = new Screen();
+    
     public void setDefaultScreen(Screen defaultScreen){
     	this.defaultScreen = defaultScreen;
     }
+    
     public Screen getDefaultScreen(){
     	return defaultScreen;
     }
-    
-    
-    
     
     
     /**

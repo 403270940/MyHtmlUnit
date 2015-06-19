@@ -117,9 +117,7 @@ public class Screen extends SimpleScriptable {
      */
     @JsxSetter({ @WebBrowser(FF), @WebBrowser(CHROME) })
     public void setAvailTop(final int availTop) {
-        if (getBrowserVersion().hasFeature(JS_SCREEN_SETTER_THROWS_ERROR)) {
-            throw Context.reportRuntimeError("screen.availTop is read only");
-        }
+        this.availTop = availTop;
         // otherwise ignore
     }
 
@@ -138,9 +136,7 @@ public class Screen extends SimpleScriptable {
      */
     @JsxSetter
     public void setAvailWidth(final int availWidth) {
-        if (getBrowserVersion().hasFeature(JS_SCREEN_SETTER_THROWS_ERROR)) {
-            throw Context.reportRuntimeError("screen.availWidth is read only");
-        }
+
         this.availWidth = availWidth;
         // otherwise ignore
     }
@@ -181,9 +177,7 @@ public class Screen extends SimpleScriptable {
      */
     @JsxSetter
     public void setColorDepth(int colorDepth) {
-        if (getBrowserVersion().hasFeature(JS_SCREEN_SETTER_THROWS_ERROR)) {
-            throw Context.reportRuntimeError("screen.colorDepth is read only");
-        }
+
         this.colorDepth = colorDepth;
         // otherwise ignore
     }
@@ -432,7 +426,6 @@ public class Screen extends SimpleScriptable {
      */
     @JsxSetter
     public void setWidth(int width) {
-
         this.width = width;
         // otherwise ignore
     }
